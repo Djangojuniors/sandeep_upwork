@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+.heading{
+color: black;
+font-family: Didot, serif;
+font-size: 30px;
+font-weight: bold;
+margin-top: 0px;
+margin-bottom: 1px;
+text-align: center;
+}
+
+</style>
+
+<div class="container">
+    {% if client_details %}
+    <h3 class="heading">CLIENT DATA</h3><br>
+    {{ client_details | safe }}
+    {% endif %}
+</div>
+
+<br>
+<div class="container">
+    {% if invoice_data %}
+    <h3 class="heading">INVOICE DATA</h3><br>
+    {% for i in invoice_data %}
+        {{ i | safe }}
+    <br>
+    {% endfor %}
+<!--    {{ invoice_data | safe }}-->
+    {% endif %}
+</div>
+<br>
+<br>
+<br>
+{% endblock %}
+
+
